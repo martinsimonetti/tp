@@ -6,7 +6,7 @@ if(!isset($_SESSION['dni'])){
       <form  class="form-ingreso " onsubmit="validarLogin();return false;">
         <h2 class="form-ingreso-heading">Ingrese sus Datos</h2>        
           <label for="dni" class="sr-only">dni</label>
-          <input type="numbre" max="99999999" id="dni" class="form-control" placeholder="DNI" required="" autofocus=""
+          <input type="number" min="1000000" max="99999999" id="dni" class="form-control" placeholder="DNI" required="" autofocus=""
           <?php 
             if(isset($_COOKIE['dni']))
               {echo "value='".$_COOKIE['dni']."'";}

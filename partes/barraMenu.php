@@ -40,7 +40,7 @@
 					{echo "style='display: block'";}
 				else
 					{echo "style='display: none'";}
-			?>><a onclick="Mostrar('alta')">Usuarios</a></li>
+			?>><a onclick="Mostrar('GrillaUsuarios')">Usuarios</a></li>
 			<li role="presentation"><a href="contact.html">Contacto</a></li>									
 		</ul>
 	</div>
