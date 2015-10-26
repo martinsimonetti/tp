@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="css/set1.css" />
 	<link href="css/overwrite.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<script type="text/javascript" src="js/funcionesABM.js"></script>
+	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -283,6 +283,7 @@
 	<script src="js/functions.js"></script>	
 	<script type="text/javascript">$('.portfolio').flipLightBox()</script>
 	<script type="text/javascript" src="js/funcionesLogin.js"></script>
-	<script type="text/javascript" src="js/funcionesAjax.js"></script>	
+	<script type="text/javascript" src="js/funcionesAjax.js"></script>
+	<script type="text/javascript" src="js/funcionesABM.js"></script>
   </body>
 </html>

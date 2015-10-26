@@ -24,7 +24,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="form-group">
+            <div id="divDni" class="form-group">
               <label class="col-md-4 control-label" for="txtDni">DNI</label>  
               <div class="col-md-4">
               <input id="txtDni" name="txtDni" type="number" min="1000000" max="99999999" placeholder="" class="form-control input-md" required="">
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Password input-->
-            <div class="form-group">
+            <div id="divClave" class="form-group">
               <label class="col-md-4 control-label" for="txtClave">Clave</label>
               <div class="col-md-4">
                 <input id="txtClave" name="txtClave" type="password" placeholder="" class="form-control input-md" required="">

@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['dni'])){ 
   ?>
-    <div id="formLogin" class="col-md-12 col-md-offset-1">      
+    <div id="formLogin" class="col-md-6 col-md-offset-3">      
       <form  class="form-ingreso " onsubmit="validarLogin();return false;">
         <h2 class="form-ingreso-heading">Ingrese sus Datos</h2>        
           <label for="dni" class="sr-only">dni</label>

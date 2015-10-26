@@ -64,10 +64,10 @@ class usuario
 		return $consulta->rowCount();
 	 }
 
-	 public static function TraerUnUsuario($correo, $clave) 
+	 public static function TraerUnUsuario($id) 
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-		$consulta =$objetoAccesoDato->RetornarConsulta("select * from usuarios where correo = $correo AND clave=$clave");
+		$consulta =$objetoAccesoDato->RetornarConsulta("select * from usuarios where id = $id");
 		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnusuario($id)");
 		$consulta->execute();
 		$usuarioBuscado= $consulta->fetchObject('usuario');
@@ -79,10 +79,15 @@ class usuario
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("
 			UPDATE usuarios 
-			SET nombre=:nombre
+			SET nombre=:nombre, apellido=:apellido, direccion=:direccion, telefono=:telefono, mail=:mail, tipo=:tipo
 			WHERE id=:id");
 		$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
 		$consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
+		$consulta->bindValue(':apellido',$this->apellido, PDO::PARAM_STR);
+		$consulta->bindValue(':direccion',$this->direccion, PDO::PARAM_STR);
+		$consulta->bindValue(':telefono',$this->telefono, PDO::PARAM_STR);
+		$consulta->bindValue(':mail',$this->mail, PDO::PARAM_STR);
+		$consulta->bindValue(':tipo',$this->tipo, PDO::PARAM_STR);
 		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Modificarusuario('$this->id','$this->clave','$this->correo','$this->sexo')");
 		return $consulta->execute();
 	}

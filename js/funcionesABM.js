@@ -22,7 +22,8 @@ function GuardarUsuario()
 	    processData: false
 	});
 	funcionAjax.done(function(retorno){
-			Mostrar('GrillaUsuarios');
+		//alert(retorno);
+		Mostrar('GrillaUsuarios');
 	});
 	funcionAjax.fail(function(retorno){	
 		alert(retorno);
@@ -48,34 +49,47 @@ function BorrarUsuario(idParametro)
 	});	
 }
 
-/*function EditarPersona(idParametro)
+function EditarUsuario(idParametro)
 {	
 	//alert(idParametro);
-	Mostrar('Alta');
+	Mostrar('AltaUsuario');
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"TraerPersona",
+			queHacer:"TraerUsuario",
 			id:idParametro
 		}
 	});
 	funcionAjax.done(function(retorno){
 		//alert(retorno);
-		var persona =JSON.parse(retorno);
-		$('#idOculto').val(persona.id);
-		//alert(persona.id);
-		$('#apellido').val(persona.apellido);
-		//alert(persona.apellido);
-		$('#nombre').val(persona.nombre);
-		//alert(persona.nombre);
-		$('#dni').val(persona.dni);
-		//alert(persona.dni);
-		$('#titulo').text("MODIFICACIÓN");
-		$('#imgPerfil').attr("src","fotos/"+persona.foto);
-		//alert("fotos/"+persona.foto);
+		var usuario =JSON.parse(retorno);
+		//alert(usuario);
+		$('#txtId').val(usuario.id);
+		//alert(usuario.id);
+		$('#txtNombre').val(usuario.nombre);
+		//alert(usuario.nombre);
+		$('#txtApellido').val(usuario.apellido);
+		//alert(usuario.apellido);		
+		$('#txtDireccion').val(usuario.direccion);
+		//alert(usuario.direccion);
+		$('#txtTelefono').val(usuario.telefono);
+		//alert(usuario.telefono);
+		$('#txtMail').val(usuario.mail);
+		//alert(usuario.mail);
+		if (usuario.tipo == "user") {
+			document.getElementById('user').checked = true;
+		}
+		else {
+			document.getElementById('admin').checked = true;
+		}
+		$('#txtDni').val(usuario.dni);
+		$('#divDni').hide();
+		$('#txtClave').val(usuario.clave);
+		$('#divClave').hide();
+		//alert(usuario.tipo);
 	});
 	funcionAjax.fail(function(retorno){	
 		alert(retorno);
 	});
-}*/
+}

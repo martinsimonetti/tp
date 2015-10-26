@@ -14,7 +14,7 @@ switch ($queHago) {
 	case 'Inicio':
 		header("location: index.php");
 		break;
-	case 'Alta':
+	case 'AltaUsuario':
 		include("partes/formAltaUsuario.php");
 		break;
 	case 'GrillaUsuarios':
@@ -34,6 +34,7 @@ switch ($queHago) {
 		
 		$cantidad=$usuario->GuardarUsuario();
 		echo $cantidad;
+		//echo var_dump($usuario->GuardarUsuario());
 		break;
 	case 'BorrarUsuario':
 		$usuario = new usuario();
@@ -41,15 +42,15 @@ switch ($queHago) {
 		$cantidad=$usuario->BorrarUsuario();
 		echo $cantidad;
 	break;
+	case 'TraerUsuario':
+		$usuario = usuario::TraerUnUsuario($_POST['id']);
+		//echo var_dump($usuario);
+		echo json_encode($usuario);
+	break;
 	/*case 'desloguear':
 			include("php/deslogearUsuario.php");
 		break;		
-	case 'Editarsuario':
-			session_start();
-			$unUsuario = usuario::ValidarUsuario($_SESSION['correo'],$_SESSION['pass']);		
-			echo json_encode($unUsuario);
-			//echo var_dump($unUsuario);
-		break;*/
+	*/
 	default:
 		# code...
 		break;
