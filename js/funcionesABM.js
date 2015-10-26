@@ -1,7 +1,6 @@
 function GuardarUsuario()
 {
-		//alert("Guardar");
-		
+		//alert("Guardar");		
 		var formData = new FormData(document.getElementById("FormAltaUsuario"));
         formData.append("queHacer", "GuardarUsuario");
 
@@ -60,7 +59,7 @@ function EditarUsuario(idParametro)
 			queHacer:"TraerUsuario",
 			id:idParametro
 		}
-	});
+	});	
 	funcionAjax.done(function(retorno){
 		//alert(retorno);
 		var usuario =JSON.parse(retorno);
