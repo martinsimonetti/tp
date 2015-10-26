@@ -44,13 +44,11 @@ switch ($queHago) {
 	break;
 	case 'TraerUsuario':
 		$usuario = usuario::TraerUnUsuario($_POST['id']);
-		//echo var_dump($usuario);
 		echo json_encode($usuario);
 	break;
-	/*case 'desloguear':
-			include("php/deslogearUsuario.php");
-		break;		
-	*/
+	case 'GrillaLocales':
+		include("partes/formGrillaLocales.php");
+		break;
 	default:
 		# code...
 		break;

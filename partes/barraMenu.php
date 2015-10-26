@@ -18,7 +18,7 @@
 					{echo "style='display: none'";}
 				else
 					{echo "style='display: block'";}
-			?>><a href="services.html">Nuestros locales</a></li>
+			?>><a onclick="Mostrar('GrillaLocales')">Nuestros locales</a></li>
 			<li role="presentation" id="loguear"
 			<?php 
 				if(isset($_SESSION['tipo']))

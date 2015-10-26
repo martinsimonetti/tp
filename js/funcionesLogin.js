@@ -33,9 +33,10 @@ function validarLogin()
 	});
 
 	funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
 		if (retorno!="error") {
 			MostarMenu();
+			Mostrar("GrillaLocales");
 		}
 		else{
 			alert("Usuario o clave incorecta.");
