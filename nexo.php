@@ -49,6 +49,9 @@ switch ($queHago) {
 	case 'GrillaLocales':
 		include("partes/formGrillaLocales.php");
 		break;
+	case 'AltaLocal':
+		include("partes/formAltaLocal.php");
+		break;
 	default:
 		# code...
 		break;

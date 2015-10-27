@@ -86,9 +86,9 @@
 
             <!-- Button (Double) -->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="btnCancelar"></label>
+              <label class="col-md-4 control-label" for="btnBorrar"></label>
               <div class="col-md-8">
-                <button type="reset" id="btnCancelar" name="btnCancelar" class="btn btn-primary">Cancelar</button>
+                <button type="reset" id="btnBorrar" name="btnBorrar" class="btn btn-primary">Borrar</button>
                 <input type="submit" id="btnAceptar" name="btnAceptar" class="btn btn-primary" value="Aceptar">
               </div>
             </div>    
