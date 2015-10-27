@@ -57,6 +57,16 @@ switch ($queHago) {
 		include("partes/guardarLocal.php");		
 		echo $cantidad;
 		break;
+	case 'BorrarLocal':
+		$local = new local();
+		$local->id=$_POST['id'];
+		$cantidad=$local->BorrarLocal();
+		echo $cantidad;
+		break;
+	case 'TraerLocal':
+		$local = local::TraerUnLocal($_POST['id']);
+		echo json_encode($local);
+		break;
 	default:
 		# code...
 		break;
