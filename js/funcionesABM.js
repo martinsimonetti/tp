@@ -92,3 +92,27 @@ function EditarUsuario(idParametro)
 		alert(retorno);
 	});
 }
+
+function GuardarLocal()
+{
+		//alert("Guardar");
+		var formData = new FormData(document.getElementById("FormAltaLocal"));
+        formData.append("queHacer", "GuardarLocal");
+
+		var funcionAjax=$.ajax({
+		url: "nexo.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+	    processData: false
+	});
+	funcionAjax.done(function(retorno){
+		//alert(retorno);
+		Mostrar('GrillaLocales');
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno.responseText);
+	});
+}

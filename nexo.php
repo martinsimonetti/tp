@@ -1,6 +1,7 @@
 <?php 
 require_once("clases/AccesoDatos.php");
 require_once("clases/usuario.php");
+require_once("clases/local.php");
 
 $queHago=$_POST['queHacer'];
 
@@ -51,6 +52,10 @@ switch ($queHago) {
 		break;
 	case 'AltaLocal':
 		include("partes/formAltaLocal.php");
+		break;
+	case 'GuardarLocal':
+		include("partes/guardarLocal.php");		
+		echo $cantidad;
 		break;
 	default:
 		# code...
