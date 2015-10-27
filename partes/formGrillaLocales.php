@@ -27,6 +27,7 @@
 
 			<?php 
 				foreach ($arrayDeLocales as $local) {
+					$m = '"'.$local->provincia.'", "'.$local->direccion.'", "'.$local->localidad.'", '.$local->id;
 					echo"<tr>							
 							<td>$local->descripcion</td>
 							<td>$local->provincia</td>
@@ -41,7 +42,7 @@
 						}
 					else
 						{
-							echo "<td><button onclick='Mostrar('AltaLocal')' class='btn btn-warning' style='background-color: green; color:white;'>Ver en Mapa</button></td>";
+							echo "<td><button onclick='VerEnMapa($m)' class='btn btn-warning' style='background-color: green; color:white;'>Ver en Mapa</button></td>";
 						}						
 					echo	"</tr>";
 				}

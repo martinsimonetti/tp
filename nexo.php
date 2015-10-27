@@ -67,6 +67,9 @@ switch ($queHago) {
 		$local = local::TraerUnLocal($_POST['id']);
 		echo json_encode($local);
 		break;
+	case 'VerEnMapa':
+		include("partes/formMapa.php");
+		break;
 	default:
 		# code...
 		break;
