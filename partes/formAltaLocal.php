@@ -79,7 +79,7 @@
             <div class="form-group">
               <input type="file" name="foto" id="foto" class="col-md-9 col-md-offset-2"/>
               <br>
-              <img id="imgPerfil" src="fotos/pordefecto.png" class="col-md-6 col-md-offset-2 fotoform"/>
+              <img id="imgPerfil" name="imgPerfil" src="fotos/pordefecto.png" class="col-md-6 col-md-offset-2 fotoform"/>
               <p style="  color: black;" class="col-md-9 col-md-offset-2">*La foto se actualiza al guardar.</p>
             </div>
             <!-- Text input-->

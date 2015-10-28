@@ -55,7 +55,8 @@ switch ($queHago) {
 		break;
 	case 'GuardarLocal':
 		include("partes/guardarLocal.php");		
-		echo $cantidad;
+		//echo $cantidad;
+		//echo var_dump($_POST['imgPerfil']);
 		break;
 	case 'BorrarLocal':
 		$local = new local();

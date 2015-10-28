@@ -11,7 +11,7 @@ function VerEnMapa(prov, dire, loc, foto, descripcion)
 		}
 	});
     funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
 		$("#mapa").html(retorno);
         $("#punto").val(punto);
         $("#foto").val(foto);

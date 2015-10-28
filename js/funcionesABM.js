@@ -1,6 +1,7 @@
 function GuardarUsuario()
 {
 		//alert("Guardar");		
+
 		var formData = new FormData(document.getElementById("FormAltaUsuario"));
         formData.append("queHacer", "GuardarUsuario");
 
@@ -96,8 +97,10 @@ function EditarUsuario(idParametro)
 function GuardarLocal()
 {
 		//alert("Guardar");
+
 		var formData = new FormData(document.getElementById("FormAltaLocal"));
         formData.append("queHacer", "GuardarLocal");
+        formData.append("imgPerfil", $('#imgPerfil').attr("src"));
 
 		var funcionAjax=$.ajax({
 		url: "nexo.php",
@@ -109,7 +112,7 @@ function GuardarLocal()
 	    processData: false
 	});
 	funcionAjax.done(function(retorno){
-		//alert(retorno);
+		alert(retorno);
 		Mostrar('GrillaLocales');
 	});
 	funcionAjax.fail(function(retorno){	
@@ -149,7 +152,7 @@ function EditarLocal(idParametro)
 		}
 	});	
 	funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
 		var local =JSON.parse(retorno);
 		//alert(local);
 		$('#txtId').val(local.id);

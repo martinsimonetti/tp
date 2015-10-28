@@ -1,5 +1,5 @@
 <?php
-	$foto;
+	$foto = "pordefecto.png";
 	
 	$local = new local();
 	$local->id=$_POST['txtId'];
@@ -12,6 +12,10 @@
 	if(!isset($_FILES["foto"]))
 	{
 		// no se cargo una imagen
+		if ($_POST['imgPerfil'] != 'fotos/pordefecto.png') {
+			$nombre = substr($_POST['imgPerfil'], 6, -1);
+			$local->foto = $nombre;
+		}
 	}
 	else
 	{
@@ -66,9 +70,16 @@
 
 	$local->foto = $foto;
 
-	if (!isset($local->foto)) {
-		$local->foto = "pordefecto.png";
+	if ($_FILES['foto']['name'] == "") {
+		if ($_POST['imgPerfil'] != 'fotos/pordefecto.png') {
+			$nombre = substr($_POST['imgPerfil'], 6);
+			$local->foto = $nombre;
+		}
 	}
-			
+
+	if (!isset($local->foto)) {
+		$local->foto = "pordefecto.png";			
+	}
+
 	$cantidad=$local->GuardarLocal();
 ?>
