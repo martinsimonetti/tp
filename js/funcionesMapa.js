@@ -1,4 +1,4 @@
-function VerEnMapa(prov, dire, loc, id)
+function VerEnMapa(prov, dire, loc, foto, descripcion)
 {
     //alert(prov + dire +  loc);
     var punto = dire +", " +  loc  +", " +  prov +", Argentina";
@@ -11,9 +11,11 @@ function VerEnMapa(prov, dire, loc, id)
 		}
 	});
     funcionAjax.done(function(retorno){
-		$("#principal").html(retorno);
+		alert(retorno);
+		$("#mapa").html(retorno);
         $("#punto").val(punto);
-        $("#id").val(id);
+        $("#foto").val(foto);
+        $("#descripcion").val(descripcion);
 		Geolocalizacion.Marcador.iniciar();
 		Geolocalizacion.Marcador.verMarcador();
 	});

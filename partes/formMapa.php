@@ -2,5 +2,6 @@
     <div id="mostrarMapa" style="height: 650px;">
     </div>
     <input type="hidden" name="punto" id="punto" readonly>
-    <input type="hidden" name="id" id="id" readonly>
+    <input type="hidden" name="foto" id="foto" readonly>
+    <input type="hidden" name="descripcion" id="descripcion" readonly>
 </div>

@@ -27,7 +27,7 @@
 
 			<?php 
 				foreach ($arrayDeLocales as $local) {
-					$m = '"'.$local->provincia.'", "'.$local->direccion.'", "'.$local->localidad.'", '.$local->id;
+					$m = '"'.$local->provincia.'", "'.$local->direccion.'", "'.$local->localidad.'", "'.$local->foto.'", "'.$local->descripcion.'"';
 					echo"<tr>							
 							<td>$local->descripcion</td>
 							<td>$local->provincia</td>
@@ -49,4 +49,7 @@
 			 ?>
 		</tbody>
 	</table>	
+</div>
+
+<div id="mapa">
 </div>
