@@ -112,7 +112,8 @@ function GuardarLocal()
 	    processData: false
 	});
 	funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
+		//MostrarInicio();
 		Mostrar('GrillaLocales');
 	});
 	funcionAjax.fail(function(retorno){	

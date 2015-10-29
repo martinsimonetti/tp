@@ -11,16 +11,10 @@
 	<div class="menu">
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation"><a onclick="MostrarInicio()">Inicio</a></li>
-			<li role="presentation" id="locales"
-			<?php 
-				session_start();
-				if(!isset($_SESSION['tipo']))
-					{echo "style='display: none'";}
-				else
-					{echo "style='display: block'";}
-			?>><a onclick="Mostrar('GrillaLocales')">Nuestros locales</a></li>
+			<li role="presentation" id="locales"><a onclick="Mostrar('GrillaLocales')">Nuestros locales</a></li>
 			<li role="presentation" id="loguear"
 			<?php 
+				session_start();
 				if(isset($_SESSION['tipo']))
 					{echo "style='display: none'";}
 				else

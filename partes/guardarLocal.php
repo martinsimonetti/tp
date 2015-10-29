@@ -12,16 +12,20 @@
 	if(!isset($_FILES["foto"]))
 	{
 		// no se cargo una imagen
-		if ($_POST['imgPerfil'] != 'fotos/pordefecto.png') {
+		/*if ($_POST['imgPerfil'] != 'fotos/pordefecto.png') {
 			$nombre = substr($_POST['imgPerfil'], 6, -1);
 			$local->foto = $nombre;
-		}
+		}*/
 	}
 	else
 	{
 		if($_FILES["foto"]['error'])
 		{
 			//error de imagen
+			if ($_POST['imgPerfil'] != "fotos/pordefecto.png") {
+				$nombreFoto = substr($_POST['imgPerfil'], 6);
+				$foto = $nombreFoto;
+			}
 		}
 		else
 		{
@@ -70,7 +74,7 @@
 
 	$local->foto = $foto;
 
-	if ($_FILES['foto']['name'] == "") {
+	/*if ($_FILES['foto']['name'] == "") {
 		if ($_POST['imgPerfil'] != 'fotos/pordefecto.png') {
 			$nombre = substr($_POST['imgPerfil'], 6);
 			$local->foto = $nombre;
@@ -79,7 +83,7 @@
 
 	if (!isset($local->foto)) {
 		$local->foto = "pordefecto.png";			
-	}
+	}*/
 
 	$cantidad=$local->GuardarLocal();
 ?>

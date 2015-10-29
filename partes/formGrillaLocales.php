@@ -6,9 +6,14 @@
 
 	$arrayDeLocales=local::TraerTodoLosLocales();
 ?>
-<div align="right">
-	<button onclick="Mostrar('AltaLocal')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Local</button>
-</div>
+
+	<?php
+	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin")
+	{ ?>
+		<div align="right">
+			<button onclick="Mostrar('AltaLocal')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Local</button>
+		</div>
+	<?php } ?>
 <br>
 <div>
 	<table class="table">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2015 a las 20:44:49
+-- Tiempo de generación: 29-10-2015 a las 20:35:05
 -- Versión del servidor: 5.5.39
 -- Versión de PHP: 5.4.31
 
@@ -35,20 +35,23 @@ CREATE TABLE IF NOT EXISTS `locales` (
   `localidad` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `direccion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `telefono` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  `foto` varchar(30) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=16 ;
+  `foto` varchar(50) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=20 ;
 
 --
 -- Volcado de datos para la tabla `locales`
 --
 
 INSERT INTO `locales` (`id`, `descripcion`, `provincia`, `localidad`, `direccion`, `telefono`, `foto`) VALUES
-(1, 'Local 1', 'Buenos Aires', 'Lanús Oeste', 'Senador Pallares 1794', '789', 'lalalala.jpg'),
 (3, 'e', 'Catamarca', 'e', 'e', 'e', 'e - e.jpg'),
 (4, 'Local 3', 'Buenos Aires', 'Avellaneda', 'Ushuaia 378', '4444-4444', 'Local 3 - Ushuaia 378.jpg'),
 (5, 'r', 'Chubut', 'r', 'r', 'r', 'pordefecto.png'),
-(14, 'g', 'Formosa', 'g', 'g', 'g', 'g - g.jpg'),
-(15, 'v', 'Río Negro', 'v', 'v', 'v', 'pordefecto.png');
+(14, 'g', 'Formosa', 'g', 'g', 'g', 'pordefecto.png'),
+(15, 'm', 'Salta', 'm', 'm', 'm', 'm - m.jpg'),
+(16, 'Local 1', 'Buenos Aires', 'Lanús Oeste', 'Senador Pallares 1794', '2062-5335', 'Local 1 - Senador Pallares 1794.jpg'),
+(17, 'f', 'Buenos Aires', 'f', 'f', 'f', 'pordefecto.png'),
+(18, 'wer', 'Río Negro', 'wer', 'wer', 'wer', 'wer - wer.jpg'),
+(19, 'Local 3', 'Buenos Aires', 'p', 'p', 'p', 'pordefecto.png');
 
 -- --------------------------------------------------------
 
@@ -100,7 +103,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `locales`
 --
 ALTER TABLE `locales`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
