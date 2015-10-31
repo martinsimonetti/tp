@@ -35,7 +35,14 @@
 				else
 					{echo "style='display: none'";}
 			?>><a onclick="Mostrar('GrillaUsuarios')">Usuarios</a></li>
-			<li role="presentation"><a href="contact.html">Contacto</a></li>									
+			<li role="presentation"><a href="contact.html">Contacto</a></li>
+			<li role="presentation" id="encuestas"
+			<?php 
+				if(isset($_SESSION['tipo']))
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a onclick="Mostrar('GrillaEncuestas')">Encuestas</a></li>								
 		</ul>
 	</div>
 </div>

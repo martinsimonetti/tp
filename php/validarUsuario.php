@@ -12,7 +12,7 @@
 	{
 		session_start();
 		$_SESSION['dni'] = $unUsuario->dni;
-		$_SESSION['clave'] = $unUsuario->clave;
+		$_SESSION['id'] = $unUsuario->id;
 		$_SESSION['tipo'] = $unUsuario->tipo;		
 		if($recordar == "true")
 		{

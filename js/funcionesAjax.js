@@ -34,3 +34,15 @@ function MostrarInicio()
 {
 	window.location = "index.php";
 }
+
+function ocultarOtros(nombre, nombreOtros)
+{ 
+	var estado = document.getElementById(nombre).checked;
+	//alert(document.getElementById(nombre).checked);
+	if (estado) {
+		$("#"+nombreOtros).show();
+	}
+	else{
+		$("#"+nombreOtros).hide();	
+	}
+}

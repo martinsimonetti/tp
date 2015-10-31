@@ -71,6 +71,12 @@ switch ($queHago) {
 	case 'VerEnMapa':
 		include("partes/formMapa.php");
 		break;
+	case 'AltaEncuesta':
+		include("partes/formAltaEncuesta.php");
+		break;
+	case 'GrillaEncuestas':
+		include("partes/formGrillaEncuestas.php");
+		break;
 	default:
 		# code...
 		break;
