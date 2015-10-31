@@ -16,7 +16,7 @@ class encuesta
  	public $p9;
 
  	public function InsertarEncuesta()
-	 {
+	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO encuestas(
 			idUsuario,idLocal,fecha,p1,p2,p3,p4,p5,p6,p7,p8,p9)
@@ -36,7 +36,16 @@ class encuesta
 		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Insertarlocal('$this->nombre','$this->clave','$this->correo','$this->sexo')");
 		$consulta->execute();
 		return $objetoAccesoDato->RetornarUltimoIdInsertado();
-	 }
+	}
+
+	public static function TraerTodasLasEncuestasDelUsuario($id)
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT e.*, l.descripcion FROM encuestas as e, locales as l WHERE e.idUsuario='$id' AND e.idLocal = l.id");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerTodoLoslocals");
+		$consulta->execute();			
+		return $consulta->fetchAll();		
+	}
 
 	/*public function GuardarLocal()
 	 {

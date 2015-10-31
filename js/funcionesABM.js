@@ -212,3 +212,38 @@ function GuardarEncuesta()
 		alert(retorno.responseText);
 	});
 }
+
+function VerEncuesta(idParametro)
+{	
+	alert(idParametro);
+	/*Mostrar('AltaLocal');
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{
+			queHacer:"TraerLocal",
+			id:idParametro
+		}
+	});	
+	funcionAjax.done(function(retorno){
+		//alert(retorno);
+		var local =JSON.parse(retorno);
+		//alert(local);
+		$('#txtId').val(local.id);
+		//alert(local.id);
+		$('#txtDescripcion').val(local.descripcion);
+		//alert(local.nombre);	
+		$('#txtDireccion').val(local.direccion);
+		//alert(local.direccion);
+		$('#txtProvincia').val(local.provincia);
+		//alert(local.direccion);
+		$('#txtLocalidad').val(local.localidad);
+		//alert(local.direccion);
+		$('#txtTelefono').val(local.telefono);
+		//alert(local.telefono);
+		$('#imgPerfil').attr("src","fotos/"+local.foto);
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno);
+	});*/
+}
