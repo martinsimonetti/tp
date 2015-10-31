@@ -84,6 +84,7 @@ switch ($queHago) {
 		$encuesta->id=$_POST['txtId'];
 		$encuesta->idUsuario=$_SESSION['id'];
 		$encuesta->idLocal=$_POST['locales'];
+		$encuesta->fecha=date('d-m-Y');
 		$encuesta->p1=$_POST['p1'];
 		$encuesta->p2=$_POST['p2'];
 		$encuesta->p3=$_POST['p3'];

@@ -4,6 +4,7 @@ class encuesta
 	public $id;
  	public $idUsuario;
  	public $idLocal;
+ 	public $fecha;
  	public $p1;
  	public $p2;
  	public $p3;
@@ -18,10 +19,11 @@ class encuesta
 	 {
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		$consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO encuestas(
-			idUsuario,idLocal,p1,p2,p3,p4,p5,p6,p7,p8,p9)
+			idUsuario,idLocal,fecha,p1,p2,p3,p4,p5,p6,p7,p8,p9)
 		VALUES(
 			'$this->idUsuario',
 			'$this->idLocal',
+			'$this->fecha',
 			'$this->p1',
 			'$this->p2',
 			'$this->p3',
