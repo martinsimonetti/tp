@@ -5,7 +5,12 @@
 	session_start();
 
 	//var_dump($_SESSION['id']);
-	$arrayDeEncuestas=encuesta::TraerTodasLasEncuestasDelUsuario($_SESSION['id']);
+	if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
+		$arrayDeEncuestas=encuesta::TraerTodasLasEncuestas();
+	}
+	else {
+		$arrayDeEncuestas=encuesta::TraerTodasLasEncuestasDelUsuario($_SESSION['id']);
+	}
 ?>
 
 	<?php
@@ -23,7 +28,11 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Fecha</th><th>Nombre del local</th><th>Ver respuestas</th>
+				<th>Fecha</th><th>Nombre del local</th><?php
+					if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
+						echo "<th>Responsable</th>";
+					}
+				?><th>Ver respuestas</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -31,8 +40,11 @@
 				foreach ($arrayDeEncuestas as $encuesta) {
 					echo"<tr>							
 							<td>$encuesta[3]</td>
-							<td>$encuesta[13]</td>
-							<td><button onclick='VerEncuesta($encuesta[0])' class='btn btn-warning' style='background-color: green; color:white;'>Ver Respuestas</button></td>";					
+							<td>$encuesta[13]</td>";
+					if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
+						echo "<td>$encuesta[15]".", "."$encuesta[14]</td>";
+					}
+					echo "<td><button onclick='VerEncuesta($encuesta[0])' class='btn btn-warning' style='background-color: green; color:white;'>Ver Respuestas</button></td>";					
 					echo	"</tr>";
 				}
 			 ?>
