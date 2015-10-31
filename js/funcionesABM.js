@@ -174,3 +174,41 @@ function EditarLocal(idParametro)
 		alert(retorno);
 	});
 }
+
+function GuardarEncuesta()
+{
+		//alert("Guardar");
+		var p6 = document.getElementById("p6-0").checked;
+		p6 += "/" + document.getElementById("p6-1").checked;
+		p6 += "/" + document.getElementById("p6-2").checked;
+		p6 += "/" + document.getElementById("p6-3").checked;
+
+		var p7 = document.getElementById("p7-0").checked;
+		p7 += "/" + document.getElementById("p7-1").checked;
+		p7 += "/" + document.getElementById("p7-2").checked;
+		p7 += "/" + document.getElementById("p7-3").checked;
+		p7 += "/" + document.getElementById("p7-4").checked;
+
+		var formData = new FormData(document.getElementById("FormAltaEncuesta"));
+        formData.append("queHacer", "GuardarEncuesta");
+        formData.append("p6", p6);
+        formData.append("p7", p7);
+
+		var funcionAjax=$.ajax({
+		url: "nexo.php",
+        type: "post",
+        dataType: "html",
+        data: formData,
+        cache: false,
+        contentType: false,
+	    processData: false
+	});
+	funcionAjax.done(function(retorno){
+		alert(retorno);
+		//MostrarInicio();
+		Mostrar('GrillaEncuestas');
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno.responseText);
+	});
+}

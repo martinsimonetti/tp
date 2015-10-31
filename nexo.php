@@ -2,6 +2,7 @@
 require_once("clases/AccesoDatos.php");
 require_once("clases/usuario.php");
 require_once("clases/local.php");
+require_once("clases/encuesta.php");
 
 $queHago=$_POST['queHacer'];
 
@@ -76,6 +77,26 @@ switch ($queHago) {
 		break;
 	case 'GrillaEncuestas':
 		include("partes/formGrillaEncuestas.php");
+		break;
+	case 'GuardarEncuesta':
+		session_start();
+		$encuesta = new encuesta();
+		$encuesta->id=$_POST['txtId'];
+		$encuesta->idUsuario=$_SESSION['id'];
+		$encuesta->idLocal=$_POST['locales'];
+		$encuesta->p1=$_POST['p1'];
+		$encuesta->p2=$_POST['p2'];
+		$encuesta->p3=$_POST['p3'];
+		$encuesta->p4=$_POST['p4'];
+		$encuesta->p5=$_POST['p5'];
+		$encuesta->p6=$_POST['p6']."/".$_POST['otrosP6'];
+		$encuesta->p7=$_POST['p7']."/".$_POST['otrosP7'];
+		$encuesta->p8=$_POST['p8'];
+		$encuesta->p9=$_POST['p9'];
+		
+	 	$cantidad=$encuesta->InsertarEncuesta();
+		echo $cantidad;
+		//echo var_dump($encuesta);
 		break;
 	default:
 		# code...
