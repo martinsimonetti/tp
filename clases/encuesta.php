@@ -56,7 +56,15 @@ class encuesta
 		return $consulta->fetchAll();		
 	}
 
-	
+	public static function TraerEncuesta($id) 
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT e.*, u.nombre, u.apellido FROM encuestas as e, usuarios as u WHERE e.id = '$id' AND e.idUsuario = u.id");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnlocal($id)");
+		$consulta->execute();
+		$localBuscado= $consulta->fetchAll();
+		return $localBuscado;			
+	}
 
 	/*public function GuardarLocal()
 	 {

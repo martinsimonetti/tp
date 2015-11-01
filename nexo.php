@@ -83,7 +83,7 @@ switch ($queHago) {
 		$encuesta = new encuesta();
 		$encuesta->id=$_POST['txtId'];
 		$encuesta->idUsuario=$_SESSION['id'];
-		$encuesta->idLocal=$_POST['locales'];
+		$encuesta->idLocal=$_POST['cmbLocales'];
 		$encuesta->fecha=date('d-m-Y');
 		$encuesta->p1=$_POST['p1'];
 		$encuesta->p2=$_POST['p2'];
@@ -98,6 +98,10 @@ switch ($queHago) {
 	 	$cantidad=$encuesta->InsertarEncuesta();
 		echo $cantidad;
 		//echo var_dump($encuesta);
+		break;
+	case 'TraerEncuesta':
+		$encuesta = encuesta::TraerEncuesta($_POST['id']);
+		echo json_encode($encuesta);
 		break;
 	default:
 		# code...

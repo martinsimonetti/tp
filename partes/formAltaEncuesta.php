@@ -13,11 +13,27 @@
 <!-- Form Name -->
 <legend>Encuesta</legend>
 
+<!-- Label -->
+<div class="form-group" id="fecha" hidden>
+  <label class="col-md-4 col-md-offset-2 control-label" for="txtFecha">Fecha</label>  
+  <div class="col-md-4">
+  <input id="txtFecha" name="txtFecha" type="text" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Label -->
+<div class="form-group" id="usuario" hidden>
+  <label class="col-md-4 col-md-offset-2 control-label" for="txtUsuario">Realizó</label>  
+  <div class="col-md-4">
+  <input id="txtUsuario" name="txtUsuario" type="text" class="form-control input-md">
+  </div>
+</div>
+
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="locales">Seleccione un local:</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="cmbLocales">Seleccione un local:</label>
   <div class="col-md-4">
-    <select id="locales" name="locales" class="form-control">
+    <select id="cmbLocales" name="cmbLocales" class="form-control">
       <?php
         foreach ($arrayDeLocales as $local) {
           echo "<option value='$local->id'>$local->descripcion</option>";
@@ -29,17 +45,17 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p1">¿Fuiste saludado por los vendedores al entrar al establecimiento?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p1">¿Fuiste saludado por los vendedores al entrar al establecimiento?</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="p1-0">
-      <input type="radio" name="p1" id="p1-0" value="true" checked="checked">
+      <input type="radio" name="p1" id="p1-0" checked>
       Si
     </label>
 	</div>
   <div class="radio">
     <label for="p1-1">
-      <input type="radio" name="p1" id="p1-1" value="false">
+      <input type="radio" name="p1" id="p1-1">
       No
     </label>
 	</div>
@@ -48,17 +64,17 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p2"> ¿Los empleados usaban el uniforme correctamente?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p2"> ¿Los empleados usaban el uniforme correctamente?</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="p2-0">
-      <input type="radio" name="p2" id="p2-0" value="true" checked="checked">
+      <input type="radio" name="p2" id="p2-0" checked>
       Si
     </label>
 	</div>
   <div class="radio">
     <label for="p2-1">
-      <input type="radio" name="p2" id="p2-1" value="false">
+      <input type="radio" name="p2" id="p2-1">
       No
     </label>
 	</div>
@@ -67,7 +83,7 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p3">¿Qué tan limpio se encontraba el local?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p3">¿Qué tan limpio se encontraba el local?</label>
   <div class="col-md-4">
     <select id="p3" name="p3" class="form-control">
       <option value="Muy sucio">Muy sucio</option>
@@ -81,7 +97,7 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p4">¿Le fue fácil encontrar el producto buscado?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p4">¿Le fue fácil encontrar el producto buscado?</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="p4-0">
@@ -100,7 +116,7 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p5">¿Con qué velocidad lo atendieron?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p5">¿Con qué velocidad lo atendieron?</label>
   <div class="col-md-4">
     <select id="p5" name="p5" class="form-control">
       <option value="Muy lento">Muy lento</option>
@@ -114,29 +130,29 @@
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p6">¿Con qué productos adicionales cuenta la Farmacia?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p6">¿Con qué productos adicionales cuenta la Farmacia?</label>
   <div class="col-md-4">
   <div class="checkbox">
     <label for="p6-0">
-      <input type="checkbox" name="p6" id="p6-0" value="Perfumería">
+      <input type="checkbox" name="p6" id="p6-0">
       Perfumería
     </label>
 	</div>
   <div class="checkbox">
     <label for="p6-1">
-      <input type="checkbox" name="p6" id="p6-1" value="Ortopedia">
+      <input type="checkbox" name="p6" id="p6-1">
       Ortopedia
     </label>
 	</div>
   <div class="checkbox">
     <label for="p6-2">
-      <input type="checkbox" name="p6" id="p6-2" value="Kiosco">
+      <input type="checkbox" name="p6" id="p6-2">
       Kiosco
     </label>
 	</div>
   <div class="checkbox">
     <label for="p6-3">
-      <input type="checkbox" name="p6" id="p6-3" value="Otros" onclick="ocultarOtros('p6-3', 'otrosP6')">
+      <input type="checkbox" name="p6" id="p6-3" onclick="ocultarOtros('p6-3', 'otrosP6')">
       Otros
     </label>
 	</div>
@@ -145,7 +161,7 @@
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="otrosP6"></label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="otrosP6"></label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="otrosP6" name="otrosP6" hidden></textarea>
   </div>
@@ -153,35 +169,35 @@
 
 <!-- Multiple Checkboxes -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p7">¿Le ofrecieron algunos de los siguientes elementos?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p7">¿Le ofrecieron algunos de los siguientes elementos?</label>
   <div class="col-md-4">
   <div class="checkbox">
     <label for="p7-0">
-      <input type="checkbox" name="p7" id="p7-0" value="Ofertas">
+      <input type="checkbox" name="p7" id="p7-0">
       Ofertas
     </label>
 	</div>
   <div class="checkbox">
     <label for="p7-1">
-      <input type="checkbox" name="p7" id="p7-1" value="Promociones">
+      <input type="checkbox" name="p7" id="p7-1">
       Promociones
     </label>
 	</div>
   <div class="checkbox">
     <label for="p7-2">
-      <input type="checkbox" name="p7" id="p7-2" value="Productos genéricos">
+      <input type="checkbox" name="p7" id="p7-2">
       Productos genéricos
     </label>
 	</div>
   <div class="checkbox">
     <label for="p7-3">
-      <input type="checkbox" name="p7" id="p7-3" value="Otros productos">
+      <input type="checkbox" name="p7" id="p7-3">
       Otros productos
     </label>
 	</div>
   <div class="checkbox">
     <label for="p7-4">
-      <input type="checkbox" name="p7" id="p7-4" value="Otros" onclick="ocultarOtros('p7-4', 'otrosP7')">
+      <input type="checkbox" name="p7" id="p7-4" onclick="ocultarOtros('p7-4', 'otrosP7')">
       Otros
     </label>
 	</div>
@@ -190,7 +206,7 @@
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="otrosP7"></label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="otrosP7"></label>
   <div class="col-md-4">                     
     <textarea class="form-control" id="otrosP7" name="otrosP7" hidden></textarea>
   </div>
@@ -198,7 +214,7 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p8">¿Le cobraron correctamente, entregándole el ticket?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p8">¿Le cobraron correctamente, entregándole el ticket?</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="p8-0">
@@ -217,7 +233,7 @@
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="p9">¿Fuiste saludado al salir del establecimiento?</label>
+  <label class="col-md-4 col-md-offset-2 control-label" for="p9">¿Fuiste saludado al salir del establecimiento?</label>
   <div class="col-md-4">
   <div class="radio">
     <label for="p9-0">
@@ -239,8 +255,9 @@
 
             <!-- Button (Double) -->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="btnBorrar"></label>
-              <div class="col-md-8">
+              <label class="col-md-5 control-label" for="btnBorrar"></label>
+              <div class="col-md-4">
+                <button id="btnAtras" onclick="Mostrar('GrillaEncuestas'); return false" class="btn btn-primary">Atras</button>
                 <button type="reset" id="btnBorrar" name="btnBorrar" class="btn btn-primary">Borrar</button>
                 <input type="submit" id="btnAceptar" name="btnAceptar" class="btn btn-primary" value="Aceptar">
               </div>

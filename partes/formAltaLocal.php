@@ -89,6 +89,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="btnBorrar"></label>
               <div class="col-md-8">
+                <button id="btnAtras" onclick="Mostrar('GrillaLocales'); return false" class="btn btn-primary">Atras</button>
                 <button type="reset" id="btnBorrar" name="btnBorrar" class="btn btn-primary">Borrar</button>
                 <input type="submit" id="btnAceptar" name="btnAceptar" class="btn btn-primary" value="Aceptar">
               </div>
