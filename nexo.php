@@ -28,7 +28,7 @@ switch ($queHago) {
 		$usuario->nombre=$_POST['txtNombre'];
 		$usuario->apellido=$_POST['txtApellido'];
 		$usuario->dni=$_POST['txtDni'];
-		$usuario->clave=$_POST['txtClave'];
+		$usuario->clave=sha1(md5($_POST['txtClave']));
 		$usuario->direccion=$_POST['txtDireccion'];
 		$usuario->telefono=$_POST['txtTelefono'];
 		$usuario->mail=$_POST['txtMail'];

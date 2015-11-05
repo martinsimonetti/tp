@@ -6,8 +6,14 @@
 	$clave=$_POST['clave'];
 	$recordar=$_POST['recordarme'];
 
-	$unUsuario = usuario::ValidarUsuario($dni,$clave);
-		
+	$claveEncriptada = sha1(md5($clave));
+
+	//echo var_dump($claveEncriptada);
+
+	$unUsuario = usuario::ValidarUsuario($dni,$claveEncriptada);
+	
+	//echo var_dump($unUsuario);
+
 	if($unUsuario)
 	{
 		session_start();

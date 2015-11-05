@@ -6,7 +6,7 @@ function MostrarLogin()
 		type:"post",
 		data:{queHacer:"MostarLogin"}
 	});
-	funcionAjax.done(function(retorno){
+	funcionAjax.done(function(retorno){		
 		$("#principal").html(retorno);
 	});
 	funcionAjax.fail(function(retorno){

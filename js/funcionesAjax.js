@@ -21,7 +21,7 @@ function MostarMenu()
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
-		cache: false,	
+		cache: false,
 		data:{queHacer:"MostarMenu"}
 	});
 	funcionAjax.done(function(retorno){
