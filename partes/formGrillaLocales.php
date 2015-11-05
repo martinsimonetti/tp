@@ -39,7 +39,7 @@
 							<td>$local->localidad</td>
 							<td>$local->direccion</td>
 							<td>$local->telefono</td>
-							<td><img  class='fotoGrilla' src='fotos/".$local->foto."' /></td>";
+							<td><img  class='fotoGrilla' src='fotos/".$local->foto."?".$_SERVER['REQUEST_TIME']."' /></td>";
 					if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin")
 						{
 							echo "<td><a onclick='EditarLocal($local->id)' class='btn btn-warning' style='color:white;'> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</a></td>

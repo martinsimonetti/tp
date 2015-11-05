@@ -56,6 +56,7 @@ function EditarUsuario(idParametro)
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
+		cache: false,
 		data:{
 			queHacer:"TraerUsuario",
 			id:idParametro
@@ -147,6 +148,7 @@ function EditarLocal(idParametro)
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
+		cache: false,
 		data:{
 			queHacer:"TraerLocal",
 			id:idParametro
@@ -168,7 +170,8 @@ function EditarLocal(idParametro)
 		//alert(local.direccion);
 		$('#txtTelefono').val(local.telefono);
 		//alert(local.telefono);
-		$('#imgPerfil').attr("src","fotos/"+local.foto);
+		var fecha = new Date();
+		$('#imgPerfil').attr("src","fotos/"+local.foto+"?"+fecha);
 	});
 	funcionAjax.fail(function(retorno){	
 		alert(retorno);
