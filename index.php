@@ -6,8 +6,8 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />	
-
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	
 	<?php
 		require("partes/referencias.php");
 	?>
@@ -19,46 +19,42 @@
 			<?php
 				include("partes/barraMenu.php");
 			?>
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<!--<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html"><span>Farmacia</span></a>
-			</div>
-			<div class="navbar-collapse collapse">							
-				<div id="barraMenu" class="menu">
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation"><a href="index.html">Inicio</a></li>
-						<li role="presentation" id="locales" style="display: none"><a href="services.html">Nuestros locales</a></li>
-						<li role="presentation" id="loguear"><a onclick="MostrarLogin()">Iniciar sesión</a></li>
-						<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-						<li role="presentation" id="desloguear" style="display: none"><a onclick="deslogear()">Cerrar sesión</a></li>
-						<li role="presentation" id="usuarios" style="display: none"><a onclick="Mostrar('alta')">Usuarios</a></li>
-						<li role="presentation"><a href="contact.html">Contacto</a></li>									
-					</ul>
-				</div>
-			</div>-->
 		</div>
 	</nav>
 	
-	
-	<div class="container">
-		<div class="row">
-			<div class="slider">
-				<div class="img-responsive">
-					<ul class="bxslider">				
-						<li><img src="img/01.jpg" alt=""/></li>								
-						<li><img src="img/01.jpg" alt=""/></li>	
-						<li><img src="img/01.jpg" alt=""/></li>			
-					</ul>
-				</div>	
-			</div>
-		</div>
-	</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="img/Imagen1.jpg" alt="">
+    </div>
+
+    <div class="item">
+      <img src="img/Imagen2.jpg" alt="">
+    </div>
+
+    <div class="item">
+      <img src="img/Imagen3.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </a>
+ </div>
 		
 	<hr>
 
@@ -67,134 +63,16 @@
 			<div id="principal">
 				<div class="col-md-6 col-md-offset-3">
 					<div class="text-center">
-						<h2>Multi Purpose Theme</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-						vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-						lorem sit amet scelerisque justo</p>
+						<h2>¿Quienes somos?</h2>
+						<p>Somos una cadena de farmacias, distribuidas en todo el pais. Contamos con
+							una amplia gama de productos de laboratorio y otros productos, como productos
+							de perfumería, ortopedia y kiosco.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!--<div class="container">
-		<div class="row">
-			<div class="box">
-				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-						<h4>Responsive</h4>					
-							<div class="icon">
-								<i class="fa fa-heart-o fa-3x"></i>
-							</div>						
-						<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
-						<h4>Multi Purpose</h4>
-						<div class="icon">
-							<i class="fa fa-desktop fa-3x"></i>
-						</div>
-						<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4">
-					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
-						<h4>Easy Customize</h4>
-						<div class="icon">
-							<i class="fa fa-location-arrow fa-3x"></i>
-						</div>
-						<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero</p>
-						<div class="ficon">
-							<a href="#" class="btn btn-default" role="button">Read more</a>
-						</div>
-					</div>
-					
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="text-center">
-					<h2>Galleries</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu<br>
-					vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam <br>
-					</p>
-				</div>
-				<hr>
-			</div>
-		</div>
-	</div>
-	
-	<div class="content">
-		<div class="grid">
-			<figure class="effect-zoe">
-				<img src="img/25.jpg" alt="img25"/>
-				<figcaption>
-					<h2>Title <span>Name</span></h2>
-					<p class="icon-links">
-						<a href="#"><span class="icon-heart"></span></a>
-						<a href="#"><span class="icon-eye"></span></a>
-						<a href="#"><span class="icon-paper-clip"></span></a>
-					</p>
-					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>			
-			</figure>
-			<figure class="effect-zoe">
-				<img src="img/26.jpg" alt="img26"/>
-				<figcaption>
-					<h2>Title <span>Name</span></h2>
-					<p class="icon-links">
-						<a href="#"><span class="icon-heart"></span></a>
-						<a href="#"><span class="icon-eye"></span></a>
-						<a href="#"><span class="icon-paper-clip"></span></a>
-					</p>
-					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>			
-			</figure>
-		</div>
-	</div>
-	
-	<div class="content">
-		<div class="grid">
-			<figure class="effect-zoe">
-				<img src="img/27.jpg" alt="img27"/>
-				<figcaption>
-					<h2>Title <span>Name</span></h2>
-					<p class="icon-links">
-						<a href="#"><span class="icon-heart"></span></a>
-						<a href="#"><span class="icon-eye"></span></a>
-						<a href="#"><span class="icon-paper-clip"></span></a>
-					</p>
-					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>			
-			</figure>
-			<figure class="effect-zoe">
-				<img src="img/30.jpg" alt="img30"/>
-				<figcaption>
-					<h2>Title <span>Name</span></h2>
-					<p class="icon-links">
-						<a href="#"><span class="icon-heart"></span></a>
-						<a href="#"><span class="icon-eye"></span></a>
-						<a href="#"><span class="icon-paper-clip"></span></a>
-					</p>
-					<p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
-				</figcaption>			
-			</figure>
-		</div>
-	</div>-->
 	<hr>
 
 	<footer>
@@ -202,27 +80,26 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 f-about">
-						<a href="index.html"><h1><span>e</span>Nno</h1></a>
-						<p>Lorem ipsum dolor sit amet consectetur adipiscing elit Cras suscipit arcu libero
-						vestibulum volutpat libero sollicitudin vitae Curabitur ac aliquam  consectetur adipiscing elit Cras suscipit arcu libero
+						<a href="index.html"><h1><span>F</span>armacias Tincho</h1></a>
+						<p>Nosotros, nos preocupamos por su salud. Por eso, tenemos a disposición un grupo de profesionales,
+						dispuestos a brindar solución a todas sus inquietudes. 
 						</p>
 					</div>
 					<div class="col-md-4 l-posts">
-						<h3 class="widgetheading">Latest Posts</h3>
+						<h3 class="widgetheading">Consultá nuestras promociones</h3>
 						<ul>
-							<li><a href="#">This is awesome post title</a></li>
-							<li><a href="#">Awesome features are awesome</a></li>
-							<li><a href="#">Create your own awesome website</a></li>
-							<li><a href="#">Wow, this is fourth post title</a></li>
+							<i class="fa fa-cc-visa col-md-offset-2" style="font-size:50px;"></i>
+							<i class="fa fa-cc-amex" style="font-size:50px;"></i>
+							<i class="fa fa-cc-mastercard" style="font-size:50px;"></i>
+							<br><h4 style="align: center;" class="col-md-8 col-md-offset-2">6 Cuotas sin interés en todos los locales</h4>
 						</ul>
 					</div>
 					<div class="col-md-4 f-contact">
-						<h3 class="widgetheading">Stay in touch</h3>
-						<a href="#"><p><i class="fa fa-envelope"></i> example@gmail.com</p></a>
-						<p><i class="fa fa-phone"></i>  +345 578 59 45 416</p>
-						<p><i class="fa fa-home"></i> Enno inc  |  PO Box 23456 
-							Little Lonsdale St, New York <br>
-							Victoria 8011 USA</p>
+						<h3 class="widgetheading">Casa central</h3>
+						<a href="#"><p><i class="fa fa-envelope"></i> info@farmaciastincho.com.ar</p></a>
+						<p><i class="fa fa-phone"></i> (011) 1234-5678</p>
+						<p><i class="fa fa-home"></i> Av. Mitre 750 <br>
+							Avellaneda, Buenos Aires</p>
 					</div>
 				</div>
 			</div>
@@ -233,23 +110,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="copyright">
-						© 2014 eNno Multi-purpose theme | <a target="_blank" href="http://bootstraptaste.com">Bootstraptaste</a>
-					</div>	
-                    <!-- 
-                        All links in the footer should remain intact. 
-                        Licenseing information is available at: http://bootstraptaste.com/license/
-                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=eNno
-                    -->				
+						© 2015 Diseñado por | <a target="_blank" href="http://www.msimonetti.tuars.com">Martín Simonetti</a>
+					</div>			
 				</div>
 			</div>
 			<div class="container">
 				<div class="row">
 					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+						<li><a href="https://es-la.facebook.com/" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
+						<li><a href="https://twitter.com/?lang=es" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+						<li><a href="https://ar.linkedin.com/" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
+						<li><a href="https://www.google.com.ar" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
 					</ul>
 				</div>
 			</div>
