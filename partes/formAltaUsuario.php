@@ -49,6 +49,22 @@ if(validadora::ValidarSesionVigente())
               </div>
             </div>
 
+            <?php
+              if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
+              {
+            ?>
+            <!-- Button (Double) -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="btnBorrar"></label>
+              <div class="col-md-8">
+                <a id="btnModificarClave" onclick="Mostrar('ModificarClave');" class='btn btn-warning' style='background-color: green; color:white;'>Modificar Contraseña</a>
+              </div>
+            </div>
+
+            <?php
+              }
+            ?>
+
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="txtDireccion">Domicilio</label>  

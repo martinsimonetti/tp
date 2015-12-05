@@ -95,6 +95,35 @@ function EditarUsuario(idParametro)
 	});
 }
 
+function GuardarContraseña()
+{
+	//alert("Contraseña Guardada");
+	var formData = new FormData(document.getElementById("FormModificarClave"));
+        formData.append("queHacer", "GuardarContraseña");
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		dataType: "html",
+		data: formData,
+		cache: false,
+        contentType: false,
+	    processData: false
+	});
+	funcionAjax.done(function(retorno){
+		//alert(retorno);
+		if(retorno != "Error")
+		{
+			EditarUsuario(retorno);
+		}
+		else{
+			alert("Contraseña incorrecta.")
+		}
+	});
+	funcionAjax.fail(function(retorno){	
+		alert(retorno);	
+	});	
+}
+
 function GuardarLocal()
 {
 		//alert("Guardar");

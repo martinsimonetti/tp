@@ -48,6 +48,24 @@ switch ($queHago) {
 		$usuario = usuario::TraerUnUsuario($_POST['id']);
 		echo json_encode($usuario);
 	break;
+	case 'ModificarClave':
+		include("partes/formModificarClave.php");
+		break;
+	case 'GuardarContraseña':
+		session_start();
+		$claveEncriptada=sha1(md5($_POST['txtClaveActual']));
+		$claveNuevaEncriptada=sha1(md5($_POST['txtClaveNueva']));
+		$usuario = usuario::TraerUnUsuarioPorIdYClave($_SESSION['id'], $claveEncriptada);
+		if ($usuario) {
+			$usuario->clave = $claveNuevaEncriptada;
+			$usuario->CambiarClave();
+			echo $usuario->id;
+		}
+		else
+		{
+			echo "Error";	
+		}
+		break;
 	case 'GrillaLocales':
 		include("partes/formGrillaLocales.php");
 		break;

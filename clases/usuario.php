@@ -74,6 +74,18 @@ class usuario
 		return $usuarioBuscado;			
 	}
 
+	 public static function TraerUnUsuarioPorIdYClave($id, $clave) 
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM usuarios WHERE id=:id AND clave=:clave");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnusuario($id)");
+		$consulta->bindValue(':id',$id, PDO::PARAM_INT);
+		$consulta->bindValue(':clave',$clave, PDO::PARAM_STR);
+		$consulta->execute();
+		$usuarioBuscado= $consulta->fetchObject('usuario');
+		return $usuarioBuscado;			
+	}
+
 	public function ModificarUsuario()
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
@@ -88,6 +100,19 @@ class usuario
 		$consulta->bindValue(':telefono',$this->telefono, PDO::PARAM_STR);
 		$consulta->bindValue(':mail',$this->mail, PDO::PARAM_STR);
 		$consulta->bindValue(':tipo',$this->tipo, PDO::PARAM_STR);
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Modificarusuario('$this->id','$this->clave','$this->correo','$this->sexo')");
+		return $consulta->execute();
+	}
+
+	public function CambiarClave()
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("
+			UPDATE usuarios 
+			SET clave=:claveNueva
+			WHERE id=:id");
+		$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
+		$consulta->bindValue(':claveNueva',$this->clave, PDO::PARAM_STR);
 		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL Modificarusuario('$this->id','$this->clave','$this->correo','$this->sexo')");
 		return $consulta->execute();
 	}

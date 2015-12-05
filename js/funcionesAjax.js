@@ -48,3 +48,20 @@ function ocultarOtros(nombre, nombreOtros)
 		$("#"+nombreOtros).hide();	
 	}
 }
+
+function ValidarClavesIguales()
+{
+	//alert("Validar clave");
+	var clave1 = document.getElementById('txtClaveNueva').value;
+	var clave2 = document.getElementById('txtClaveNueva2').value;
+	
+	if(clave1 == clave2){
+		return true;				
+	}
+	else
+	{
+		alert("Las contraseñas no son iguales. Reingrese.");
+	}
+
+	return false;
+}
