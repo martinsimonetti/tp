@@ -42,7 +42,16 @@
 					{echo "style='display: block'";}
 				else
 					{echo "style='display: none'";}
-			?>><a href="#principal"  onclick="Mostrar('GrillaEncuestas')">Encuestas</a></li>								
+			?>><a href="#principal"  onclick="Mostrar('GrillaEncuestas')">Encuestas</a></li>
+			<li role="presentation" id="encuestas"
+			<?php 
+				if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a href="#principal"  onclick="EditarUsuario(
+				<?php echo $_SESSION['id']; ?>
+				)">Mi Perfil</a></li>
 		</ul>
 	</div>
 </div>
