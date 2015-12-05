@@ -207,7 +207,7 @@ function GuardarEncuesta()
 	    processData: false
 	});
 	funcionAjax.done(function(retorno){
-		alert(retorno);
+		//alert(retorno);
 		//MostrarInicio();
 		Mostrar('GrillaEncuestas');
 	});

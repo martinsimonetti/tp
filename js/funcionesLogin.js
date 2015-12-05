@@ -34,7 +34,7 @@ function validarLogin()
 
 	funcionAjax.done(function(retorno){
 		//alert(retorno);
-		if (retorno!="error") {
+		if (retorno!="Error") {
 			MostarMenu();
 			Mostrar("GrillaLocales");
 		}

@@ -1,8 +1,11 @@
 <?php
-	require_once("clases/AccesoDatos.php");
-	require_once("clases/encuesta.php");
+require_once("clases/AccesoDatos.php");
+require_once("clases/usuario.php");
+require_once("clases/validadora.php");
 
-	session_start();
+if(validadora::ValidarSesionVigente())
+{
+	require_once("clases/encuesta.php");
 
 	//var_dump($_SESSION['id']);
 	if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
@@ -51,3 +54,9 @@
 		</tbody>
 	</table>
 </div>
+
+<?php   }else {
+    echo "<h4 class='widgettitle col-md-6 col-md-offset-4'>Su sesión ha expirado. Por favor vuelva a loguearse.</h4>
+    <button class='btn btn-primary col-md-1 col-md-offset-6' onclick='MostrarLogin()'>Login</button>";
+  }
+?>

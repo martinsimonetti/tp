@@ -1,37 +1,11 @@
 <?php 
 	require_once("../clases/AccesoDatos.php");
 	require_once("../clases/usuario.php");
+	require_once("../clases/validadora.php");
 
 	$dni=$_POST['dni'];
 	$clave=$_POST['clave'];
 	$recordar=$_POST['recordarme'];
 
-	$claveEncriptada = sha1(md5($clave));
-
-	//echo var_dump($claveEncriptada);
-
-	$unUsuario = usuario::ValidarUsuario($dni,$claveEncriptada);
-	
-	//echo var_dump($unUsuario);
-
-	if($unUsuario)
-	{
-		session_start();
-		$_SESSION['dni'] = $unUsuario->dni;
-		$_SESSION['id'] = $unUsuario->id;
-		$_SESSION['tipo'] = $unUsuario->tipo;		
-		if($recordar == "true")
-		{
-			setcookie("dni", $dni, time()+36000, '/');			
-		}
-		else
-		{
-			setcookie("dni", $dni, time()-36000, '/');			
-		}
-		echo $recordar;
-	}
-	else
-	{
-		echo "error";		
-	}
+	echo validadora::ValidarLogin($dni,$clave,$recordar);
 ?>
