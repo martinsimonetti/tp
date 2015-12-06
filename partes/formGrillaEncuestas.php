@@ -20,6 +20,8 @@ if(validadora::ValidarSesionVigente())
 	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
 	{ ?>
 		<div align="right">
+			<a href="php/exportarEncuestaPDF.php" class="btn btn-primary">Exportar a PDF</a>
+			<a href="php/exportarEncuestaDOC.php" class="btn btn-primary">Exportar a Word</a>
 			<button onclick="Mostrar('AltaEncuesta')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nueva Encuesta</button>
 		</div>
 	<?php } ?>

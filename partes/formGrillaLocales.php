@@ -5,15 +5,21 @@
 	session_start();
 
 	$arrayDeLocales=local::TraerTodoLosLocales();
-?>
 
-	<?php
-	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin")
-	{ ?>
-		<div align="right">
-			<button onclick="Mostrar('AltaLocal')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Local</button>
-		</div>
-	<?php } ?>
+	if(isset($_SESSION['tipo']))
+	{
+?>
+	<div align="right">
+		<a href="php/exportarLocalPDF.php" class="btn btn-primary">Exportar a PDF</a>
+		<a href="php/exportarLocalXLS.php" class="btn btn-primary">Exportar a Excel</a>
+		<?php
+		if($_SESSION['tipo'] == "admin")
+		{ ?>
+			<button onclick="Mostrar('AltaLocal')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Local</button>			
+		<?php 
+		}
+	} ?>
+	</div>
 <br>
 <div>
 	<table class="table">

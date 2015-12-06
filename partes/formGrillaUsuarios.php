@@ -9,6 +9,8 @@ if(validadora::ValidarSesionVigente())
 ?>
 
 <div align="right">
+	<a href="php/exportarUsuarioPDF.php" class="btn btn-primary">Exportar a PDF</a>
+	<a href="php/exportarUsuarioXLS.php" class="btn btn-primary">Exportar a Excel</a>
 	<button onclick="Mostrar('AltaUsuario')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Usuario</button>
 </div>
 <br>
