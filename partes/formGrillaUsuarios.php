@@ -9,8 +9,8 @@ if(validadora::ValidarSesionVigente())
 ?>
 
 <div align="right">
-	<a href="php/exportarUsuarioPDF.php" class="btn btn-primary">Exportar a PDF</a>
-	<a href="php/exportarUsuarioXLS.php" class="btn btn-primary">Exportar a Excel</a>
+	<a href="php/exportarUsuarioPDF.php" class="btn btn-primary" style='background-color: red;'>Exportar a PDF</a>
+	<a href="php/exportarUsuarioXLS.php" class="btn btn-primary" style='background-color: green;'>Exportar a Excel</a>
 	<button onclick="Mostrar('AltaUsuario')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nuevo Usuario</button>
 </div>
 <br>
@@ -34,7 +34,7 @@ if(validadora::ValidarSesionVigente())
 							<td>$usuario->mail</td>
 							<td>$usuario->tipo</td>
 							<td><a onclick='EditarUsuario($usuario->id)' class='btn btn-warning' style='color:white;'> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</a></td>
-							<td><a onclick='BorrarUsuario($usuario->id)' class='btn btn-danger' style='color:white;'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>
+							<td><a onclick='BorrarUsuario($usuario->id)' class='btn btn-danger' style='color:white;'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>							
 						</tr>   ";
 				}
 			 ?>

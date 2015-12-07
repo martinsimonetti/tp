@@ -51,38 +51,38 @@ if(validadora::ValidarSesionVigente())
 <!-- Multiple Radios -->
 <div class="form-group">
   <label class="col-md-4 col-md-offset-2 control-label" for="p1">¿Fuiste saludado por los vendedores al entrar al establecimiento?</label>
-  <div class="col-md-4">
+  <div class="col-md-1">
   <div class="radio">
     <label for="p1-0">
-      <input type="radio" name="p1" id="p1-0" checked>
+      <input type="radio" name="p1" id="p1-0" value="true" checked="checked">
       Si
     </label>
-	</div>
+  </div>
   <div class="radio">
     <label for="p1-1">
-      <input type="radio" name="p1" id="p1-1">
+      <input type="radio" name="p1" id="p1-1" value="false">
       No
     </label>
-	</div>
+  </div>
   </div>
 </div>
 
 <!-- Multiple Radios -->
 <div class="form-group">
-  <label class="col-md-4 col-md-offset-2 control-label" for="p2"> ¿Los empleados usaban el uniforme correctamente?</label>
-  <div class="col-md-4">
+  <label class="col-md-4 col-md-offset-2 control-label" for="p2">¿Los empleados usaban el uniforme correctamente?</label>
+  <div class="col-md-1">
   <div class="radio">
     <label for="p2-0">
-      <input type="radio" name="p2" id="p2-0" checked>
+      <input type="radio" name="p2" id="p2-0" value="true" checked="checked">
       Si
     </label>
-	</div>
+  </div>
   <div class="radio">
     <label for="p2-1">
-      <input type="radio" name="p2" id="p2-1">
+      <input type="radio" name="p2" id="p2-1" value="false">
       No
     </label>
-	</div>
+  </div>
   </div>
 </div>
 

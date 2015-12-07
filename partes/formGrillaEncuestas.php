@@ -20,13 +20,13 @@ if(validadora::ValidarSesionVigente())
 	if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
 	{ ?>
 		<div align="right">
-			<a href="php/exportarEncuestaPDF.php" class="btn btn-primary">Exportar a PDF</a>
-			<a href="php/exportarEncuestaDOC.php" class="btn btn-primary">Exportar a Word</a>
+			<a href="php/exportarEncuestaPDF.php" class="btn btn-primary" style='background-color: red;'>Exportar a PDF</a>
+			<a href="php/exportarEncuestaDOC.php" class="btn btn-primary" style='background-color: blue;'>Exportar a Word</a>
 			<button onclick="Mostrar('AltaEncuesta')" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign">&nbsp;</span>Nueva Encuesta</button>
 		</div>
 	<?php } ?>
 <br>
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
 	<?php
 		//var_dump($arrayDeEncuestas);
 	?>
@@ -37,7 +37,7 @@ if(validadora::ValidarSesionVigente())
 					if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
 						echo "<th>Responsable</th>";
 					}
-				?><th>Ver respuestas</th>
+				?><th>Ver respuestas</th><th>Exportar respuestas a...</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,7 +49,9 @@ if(validadora::ValidarSesionVigente())
 					if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin") {
 						echo "<td>$encuesta[15]".", "."$encuesta[14]</td>";
 					}
-					echo "<td><button onclick='VerEncuesta($encuesta[0])' class='btn btn-warning' style='background-color: green; color:white;'>Ver Respuestas</button></td>";					
+					echo "<td><button onclick='VerEncuesta($encuesta[0])' class='btn btn-warning' style='background-color: green; color:white;'>Ver Respuestas</button></td>
+					<td><a href='php/exportarUnaEncuestaPDF.php?id=$encuesta[0]' class='btn btn-warning' style='background-color: red; color:white;'>PDF</a>
+					<a href='php/exportarUnaEncuestaDOC.php?id=$encuesta[0]' class='btn btn-warning' style='background-color: blue; color:white;'>Word</a></td>";					
 					echo	"</tr>";
 				}
 			 ?>

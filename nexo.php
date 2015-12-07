@@ -115,7 +115,7 @@ switch ($queHago) {
 		
 	 	$cantidad=$encuesta->InsertarEncuesta();
 		echo $cantidad;
-		//echo var_dump($encuesta);
+		//echo var_dump($_POST);
 		break;
 	case 'TraerEncuesta':
 		$encuesta = encuesta::TraerEncuesta($_POST['id']);

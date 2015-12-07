@@ -10,8 +10,8 @@
 	{
 ?>
 	<div align="right">
-		<a href="php/exportarLocalPDF.php" class="btn btn-primary">Exportar a PDF</a>
-		<a href="php/exportarLocalXLS.php" class="btn btn-primary">Exportar a Excel</a>
+		<a href="php/exportarLocalPDF.php" class="btn btn-primary" style='background-color: red;'>Exportar a PDF</a>
+		<a href="php/exportarLocalXLS.php" class="btn btn-primary" style='background-color: green;'>Exportar a Excel</a>
 		<?php
 		if($_SESSION['tipo'] == "admin")
 		{ ?>

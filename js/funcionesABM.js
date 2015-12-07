@@ -209,7 +209,7 @@ function EditarLocal(idParametro)
 
 function GuardarEncuesta()
 {
-		//alert("Guardar");
+		//alert("Guardar Encuesta");
 		var p6 = document.getElementById("p6-0").checked;
 		p6 += "/" + document.getElementById("p6-1").checked;
 		p6 += "/" + document.getElementById("p6-2").checked;
