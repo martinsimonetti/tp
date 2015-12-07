@@ -66,6 +66,27 @@ class encuesta
 		return $localBuscado;			
 	}
 
+	public static function ContarLocalesEncuestados() 
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT l.descripcion, COUNT(e.idLocal) FROM encuestas as e, locales as l WHERE e.idLocal = l.id GROUP BY e.idLocal");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnlocal($id)");
+		$consulta->execute();
+		$localBuscado= $consulta->fetchAll();
+		return $localBuscado;			
+	}
+
+	public static function ContarLimpiezaLocales() 
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT p3, COUNT(p3) FROM encuestas GROUP BY p3");
+		//$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnlocal($id)");
+		$consulta->execute();
+		$localBuscado= $consulta->fetchAll();
+		return $localBuscado;			
+	}
+
+
 	/*public function GuardarLocal()
 	 {
 	 	if($this->id>0)

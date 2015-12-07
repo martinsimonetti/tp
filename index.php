@@ -7,6 +7,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
 	<?php
 		require("partes/referencias.php");
@@ -96,7 +99,7 @@
 					</div>
 					<div class="col-md-4 f-contact">
 						<h3 class="widgetheading">Casa central</h3>
-						<a href="#"><p><i class="fa fa-envelope"></i> info@farmaciastincho.com.ar</p></a>
+						<p><i class="fa fa-envelope"></i> info@farmaciastincho.com.ar</p>
 						<p><i class="fa fa-phone"></i> (011) 1234-5678</p>
 						<p><i class="fa fa-home"></i> Av. Mitre 750 <br>
 							Avellaneda, Buenos Aires</p>

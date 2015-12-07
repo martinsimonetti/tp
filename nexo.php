@@ -121,6 +121,9 @@ switch ($queHago) {
 		$encuesta = encuesta::TraerEncuesta($_POST['id']);
 		echo json_encode($encuesta);
 		break;
+	case 'estadisticas':
+		include("partes/formEstadisticas.php");
+		break;
 	default:
 		# code...
 		break;
