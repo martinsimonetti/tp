@@ -79,7 +79,8 @@ switch ($queHago) {
 		break;
 	case 'BorrarLocal':
 		$local = new local();
-		$local->id=$_POST['id'];
+		$local = local::TraerUnLocal($_POST['id']);
+		unlink("fotos/".$local->foto);
 		$cantidad=$local->BorrarLocal();
 		echo $cantidad;
 		break;

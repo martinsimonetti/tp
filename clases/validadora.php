@@ -49,7 +49,7 @@
 				//echo var_dump($horaSesion);
 
 				$duracion = $horaActual - $horaSesion;
-				if ($duracion < 30) {
+				if ($duracion < 60) {
 					$_SESSION['tiempo'] = date('d-M-Y g:i:s A');
 					$retorno= true;
 				}

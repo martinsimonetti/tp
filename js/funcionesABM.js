@@ -163,6 +163,7 @@ function BorrarLocal(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
+		//alert(retorno);
 		Mostrar('GrillaLocales');		
 	});
 	funcionAjax.fail(function(retorno){	

@@ -92,7 +92,7 @@ $(function () {
                 }
             },
             series: [{
-                name: 'Brands',
+                name: 'Porcentaje',
                 colorByPoint: true,
                 data: [{
                     name: <?php echo "'".$arrayDeEncuestas2[0][0]."'"; ?>,

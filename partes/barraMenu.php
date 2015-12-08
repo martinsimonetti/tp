@@ -12,9 +12,39 @@
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation"><a onclick="MostrarInicio()">Inicio</a></li>
 			<li role="presentation" id="locales"><a href="#principal" onclick="Mostrar('GrillaLocales')">Nuestros locales</a></li>
-			<li role="presentation" id="loguear"
+			<li role="presentation" id="usuarios"
 			<?php 
 				session_start();
+				if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin")
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a href="#principal"  onclick="Mostrar('GrillaUsuarios')">Usuarios</a></li>
+			<li role="presentation" id="estadisticas"
+			<?php 
+				if(isset($_SESSION['tipo']))
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a href="#principal"  onclick="Mostrar('GrillaEncuestas')">Encuestas</a></li>
+			<li role="presentation" id="encuestas"
+			<?php 
+				if(isset($_SESSION['tipo']))
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a href="#principal"  onclick="Mostrar('estadisticas')">Estadísticas</a></li>			
+			<li role="presentation" id="miPerfil"
+			<?php 
+				if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
+					{echo "style='display: block'";}
+				else
+					{echo "style='display: none'";}
+			?>><a href="#principal"  onclick="EditarUsuario(
+				<?php echo $_SESSION['id']; ?>
+				)">Mi Perfil</a></li>
+			<li role="presentation" id="loguear"
+			<?php 				
 				if(isset($_SESSION['tipo']))
 					{echo "style='display: none'";}
 				else
@@ -28,36 +58,6 @@
 				else
 					{echo "style='display: block'";}
 			?>><a href="#principal"  onclick="deslogear()">Cerrar sesión</a></li>
-			<li role="presentation" id="usuarios"
-			<?php 
-				if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "admin")
-					{echo "style='display: block'";}
-				else
-					{echo "style='display: none'";}
-			?>><a href="#principal"  onclick="Mostrar('GrillaUsuarios')">Usuarios</a></li>
-			<li role="presentation" id="encuestas"
-			<?php 
-				if(isset($_SESSION['tipo']))
-					{echo "style='display: block'";}
-				else
-					{echo "style='display: none'";}
-			?>><a href="#principal"  onclick="Mostrar('estadisticas')">Estadísticas</a></li>
-			<li role="presentation" id="estadisticas"
-			<?php 
-				if(isset($_SESSION['tipo']))
-					{echo "style='display: block'";}
-				else
-					{echo "style='display: none'";}
-			?>><a href="#principal"  onclick="Mostrar('GrillaEncuestas')">Encuestas</a></li>
-			<li role="presentation" id="encuestas"
-			<?php 
-				if(isset($_SESSION['tipo']) && $_SESSION['tipo'] == "user")
-					{echo "style='display: block'";}
-				else
-					{echo "style='display: none'";}
-			?>><a href="#principal"  onclick="EditarUsuario(
-				<?php echo $_SESSION['id']; ?>
-				)">Mi Perfil</a></li>
 		</ul>
 	</div>
 </div>
